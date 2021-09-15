@@ -1,0 +1,32 @@
+
+spring:
+  datasource:
+    #&serverTimezone=Asia/Shanghai 因为插入的时间与系统当前时间慢8小时，于是改成东区的上海
+    url: jdbc:mysql://192.168.0.243:3306/jinda?useUnicode=true&useAffectedRows=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&allowMultiQueries=true
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+mybatis-plus:
+  type-aliases-package: com.core.entity
+  global-config:
+    db-config:
+      #      field-strategy: ignored
+      #      全局默认主键类型
+      #      id-type: id_worker
+      #逻辑已删除值
+      logic-delete-value: 1
+      #逻辑未删除值
+      logic-not-delete-value: 0
+      #驼峰下划线转换
+      column-underline: true
+      #数据库大写下划线转换
+      #capital-mode: true
+  configuration:
+    #自动驼峰命名规则
+    map-underscore-to-camel-case: true
+    # sql执行语句打印
+  #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-enums-package: com.wpl.qqsd.em

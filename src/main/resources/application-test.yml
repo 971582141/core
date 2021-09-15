@@ -1,0 +1,12 @@
+
+spring:
+  datasource:
+    #&serverTimezone=Asia/Shanghai 因为插入的时间与系统当前时间慢8小时，于是改成东区的上海
+    url: jdbc:mysql://localhost:3306/jinda?useUnicode=true&useAffectedRows=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&allowMultiQueries=true
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+logging:
+  file:
+    name: core.log
+    path: /home/jar/logs
